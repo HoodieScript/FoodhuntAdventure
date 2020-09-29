@@ -24,7 +24,13 @@ class FooddropscoresController extends Controller
         $systemupdates = Systemupdate::all();
         $fooddropscores = Fooddropscores::orderBy('fdscore','desc')->paginate(10);
 
-        return view('fooddrop.index',compact('systemupdates'))->with('fooddrops', $fooddropscores);
+        $multipledata = [
+            'systemupdates' => $systemupdates,
+            'fooddropscores' => $fooddropscores,
+           
+            ];
+        return view('fooddrop.index')->with($multipledata);
+        
 
     }
 
@@ -38,7 +44,13 @@ class FooddropscoresController extends Controller
                 ->orWhere('datefd', 'like', '%' . $search . '%')
                 ->paginate(10);
 
-                return view('fooddrop.index', compact('systemupdates'))->with('fooddrops', $fooddropscores);
+                $multipledata = [
+                    'systemupdates' => $systemupdates,
+                    'fooddropscores' => $fooddropscores,
+                   
+                    ];
+                return view('fooddrop.index')->with($multipledata);
+                
     }
 
     /**

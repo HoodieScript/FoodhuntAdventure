@@ -2,24 +2,6 @@
 
 
 
-@section('nameandapp')
-
-    
-@if(count($systemupdates) >0)
-    @foreach($systemupdates as $systemupdate)
-    
-    <img src="/storage/images_uploads/{{ $systemupdate->cover_image }}" class="dost-image">
-    
-    <a class="navbar-brand text-white">{{ $systemupdate->systemname }}</a>
-   
-
-    @endforeach
-@endif
- 
-
-
-@overwrite
-
 
 @section('contentmo')
 

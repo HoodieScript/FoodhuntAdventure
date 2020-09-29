@@ -14,7 +14,7 @@
    <form action="/search-for-players-data" method="get">
             @csrf
                 <div class="input-group">
-                    <input type="search" name="search" placeholder="search..." maxlength="30" class="form-control">
+                    <input type="search" name="search" placeholder="search username, gender, age" maxlength="30" class="form-control">
                     <span class="input-group-prepend">
                         <button type="submit" class="btn btn-sm btn-info rounded"><i class="fas fa-search"></i></button>
                     </span>

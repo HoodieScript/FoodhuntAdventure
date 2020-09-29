@@ -16,6 +16,12 @@ class CreateSpellafoodscoresTable extends Migration
         Schema::create('spellafoodscores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
+            $table->integer('easy_score');
+            $table->integer('easy_time');
+            $table->integer('moderate_score');
+            $table->integer('moderate_time');
+            $table->integer('hard_score');
+            $table->integer('hard_time');
             $table->integer('score');
             $table->string('date');
             $table->timestamps();

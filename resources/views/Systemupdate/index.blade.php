@@ -39,9 +39,9 @@
 
         <!-- second column -->
         <div class="col-md-6">
-        <div class="custom-file">
-        <label class="custom-file-label" for="validatedCustomFile">choose image...</label>
-        <input type="file" name="uploadimage" class="custom-file-input" id="validatedCustomFile" required>
+  
+       
+        <input type="file" name="uploadimage" class="form-control btn border-0" required>
 
         <!--start validation -->
         <div class="valid-feedback">
@@ -52,7 +52,7 @@
       </div>
         <!--end validation -->
   
-        </div></div>
+       </div>
         <!-- end second column -->
         <!-- third column -->
    <div class="col-md-12">
@@ -105,14 +105,5 @@
 </div>
 <div>
 
-@overwrite
 
-@section('nameandlogo')
-@foreach($systemupdates as $systemdata)
-
-
-<a class=" nav-link text-white"><img src="{{ asset('/uploads/dataimages/' .  $systemdata->uploadimage ) }}" class="img imagelogo">{{ $systemdata->systemname }} </a>
-
-
-@endforeach
 @endsection

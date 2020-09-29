@@ -33,8 +33,8 @@ class SpellafoodscoresController extends Controller
         $search = $request->get('search');
         $spellafoods = Spellafoodscores::where('id', 'like', '%' . $search . '%')
                 ->orWhere('username', 'like', '%' . $search . '%')
-                ->orWhere('score', 'like', '%' . $search . '%')
-                ->orWhere('date', 'like', '%' . $search . '%')
+               // ->orWhere('score', 'like', '%' . $search . '%')
+              //  ->orWhere('date', 'like', '%' . $search . '%')
                 ->paginate(10);
 
                 return view('Spellafood.index', compact('systemupdates'))->with('spellafoods', $spellafoods);

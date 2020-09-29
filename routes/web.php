@@ -35,7 +35,6 @@ Route::resource('activitylogs', 'ActivitylogsController');
 Route::resource('foodhunt', 'StageprogressController');
 Route::resource('spellafood', 'SpellafoodscoresController');
 Route::resource('fooddrop', 'FooddropscoresController');
-Route::resource('helpinfos', 'HelpsController');
 
 Auth::routes();
 

@@ -1,282 +1,261 @@
-html, body{
-	  font-family: 'Nunito', sans-serif;
-	  font-weight: 100;
-	  height: 100%;
+html,
+body {
+    font-family: "Nunito", sans-serif;
+    font-weight: 100;
+    height: 100%;
     margin: 0;
     padding-bottom: 30px;
-  	position: relative;
+    position: relative;
     overflow-x: hidden;
-    
 }
-.dost-image{
-	height: 45px;
-	width: 45px;
+.dost-image {
+    height: 45px;
+    width: 45px;
 }
 
 #wrapper {
-  padding-left: 0;
-  transition: all 0.5s ease-in-out;
-  position: relative;
-  height: 100%;
-  width: 100vw;
-  
+    padding-left: 0;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    height: 100%;
+    width: 100vw;
 }
-#nav-bar{
-  position: fixed;
-  z-index: 1;
-  background-color: white;
-  box-shadow: 0px 4px 3px 2px rgba(0, 0, 0, 0.16);
+#nav-bar {
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 4px 3px 2px rgba(0, 0, 0, 0.16);
+    z-index: 5;
 }
 #sidebar-wrapper {
-  z-index: 2;
-  position: fixed;
-  left: 250px;
-  width: 0;
-  height: 100%;
-  margin-left: -250px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transition: all 0.5s ease;
-  background-color: #1b2a49;
+    z-index: 6;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease;
+    background-color: #1b2a49;
 }
-#sidebar-wrapper ul li:hover{
-  transition: 0.3s;
-  border-left: 5px solid #0080ff;
-
-
+#sidebar-wrapper ul li:hover {
+    transition: 0.3s;
+    border-left: 5px solid #0080ff;
 }
 
-#sidebar-wrapper ul li a{
-	color: white;
-	transition: 0.5s;
+#sidebar-wrapper ul li a {
+    color: white;
+    transition: 0.5s;
 }
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px;
+    width: 250px;
 }
 .sidebar-nav {
-  position: absolute;
-  width: 250px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    position: absolute;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.sidebar-brand{
-	background: linear-gradient(to right bottom, #23374d 50%, #394a6d 50%);
+.sidebar-brand {
+    background: linear-gradient(to right bottom, #23374d 50%, #394a6d 50%);
 }
-.content-wrapper , #wrapper{
-  
-
+.content-wrapper,
+#wrapper {
 }
 #wrapper.toggled #navbar-wrapper {
     position: absolute;
     margin-right: -250px;
 }
-.collapse{
-	background-color: #293462;
+.collapse {
+    background-color: #293462;
 }
-.collapse a{
-	color: white;
+.collapse a {
+    color: white;
 }
-.collapse a:hover{
-	transition: 0.3s;
-	background-color: #494ca2;
-	color: white;
+.collapse a:hover {
+    transition: 0.3s;
+    background-color: #494ca2;
+    color: white;
 }
 #content-wrapper {
-  width: 100%;
-  position: absolute;
-  padding: 15px;
-  top: 100px;
-  height: 100%;
-  background-color: white;
-  
+    width: 100%;
+    position: absolute;
+    padding-top: 5%;
+    top: 100px;
+    height: 100%;
+    background-color: white;
 }
 
-.modal-create{
-  margin-top: 10%;
+.modal-create {
+    margin-top: 10%;
 }
 #wrapper.toggled #content-wrapper {
-  position: absolute;
-  margin-right: -250px;
-  background-color: white;
+    position: absolute;
+    margin-right: -250px;
+    background-color: white;
 }
 
 @media (min-width: 992px) {
-  #wrapper {
-    padding-left: 250px;
-  }
-  
-  #wrapper.toggled {
-    padding-left: 60px;
-  }
+    #wrapper {
+        padding-left: 250px;
+    }
 
-  #sidebar-wrapper {
-    width: 250px;
-  }
-  
-  #wrapper.toggled #sidebar-wrapper {
-    width: 60px;
-  }
-  
-  #wrapper.toggled #navbar-wrapper {
-    position: absolute;
-    margin-right: -190px;
-}
-  
-  #wrapper.toggled #content-wrapper {
-    position: absolute;
-    margin-right: -190px;
-  }
+    #wrapper.toggled {
+        padding-left: 60px;
+    }
 
-  #navbar-wrapper {
-    position: relative;
-    
-  }
+    #sidebar-wrapper {
+        width: 250px;
+    }
 
-  #wrapper.toggled {
-    padding-left: 60px;
-  }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 60px;
+    }
 
-  #content-wrapper {
-    position: relative;
-    top: 0;
-    
+    #wrapper.toggled #navbar-wrapper {
+        position: absolute;
+        margin-right: -190px;
+    }
 
-  }
+    #wrapper.toggled #content-wrapper {
+        position: absolute;
+        margin-right: -190px;
+    }
 
-  #wrapper.toggled #navbar-wrapper,
-  #wrapper.toggled #content-wrapper {
-    position: relative;
-    margin-right: 60px;
-    
-  }
+    #navbar-wrapper {
+        position: relative;
+    }
+
+    #wrapper.toggled {
+        padding-left: 60px;
+    }
+
+    #content-wrapper {
+        position: relative;
+        top: 0;
+    }
+
+    #wrapper.toggled #navbar-wrapper,
+    #wrapper.toggled #content-wrapper {
+        position: relative;
+        margin-right: 60px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #wrapper {
-    padding-left: 60px;
-    
-  }
+    #wrapper {
+        padding-left: 60px;
+    }
 
-  #sidebar-wrapper {
-    width: 60px;
-  }
-  
-#wrapper.toggled #navbar-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-  
-  #wrapper.toggled #content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-  }
+    #sidebar-wrapper {
+        width: 60px;
+    }
 
-  #navbar-wrapper {
-    position: relative;
-    top: 0;
-    
+    #wrapper.toggled #navbar-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
 
-  }
+    #wrapper.toggled #content-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
 
-  #wrapper.toggled {
-    padding-left: 250px;
-  }
+    #navbar-wrapper {
+        position: relative;
+        top: 0;
+    }
 
-  #content-wrapper {
-    position: relative;
-    top: 0;
-    
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
 
-  }
-  .ellipsis {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .error
-  {
-  color:red;
-  font-family:verdana, Helvetica;
-  }
-  #wrapper.toggled #navbar-wrapper,
-  #wrapper.toggled #content-wrapper {
-    position: relative;
-    margin-right: 250px;
-  }
+    #content-wrapper {
+        position: relative;
+        top: 0;
+    }
+    .ellipsis {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .error {
+        color: red;
+        font-family: verdana, Helvetica;
+    }
+    #wrapper.toggled #navbar-wrapper,
+    #wrapper.toggled #content-wrapper {
+        position: relative;
+        margin-right: 250px;
+    }
 }
 
 @media (max-width: 767px) {
-  #wrapper {
-    padding-left: 0;
-    
-  }
+    #wrapper {
+        padding-left: 0;
+    }
 
-  #sidebar-wrapper {
-    width: 0;
-  }
+    #sidebar-wrapper {
+        width: 0;
+    }
 
-  #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-  }
-  #wrapper.toggled #navbar-wrapper {
-    position: absolute;
-    margin-right: -250px;
-  }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+    #wrapper.toggled #navbar-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
 
-  #wrapper.toggled #content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-  }
+    #wrapper.toggled #content-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
 
-  #navbar-wrapper {
-    position: relative;
-  }
+    #navbar-wrapper {
+        position: relative;
+    }
 
-  #wrapper.toggled {
-    padding-left: 250px;
-  }
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
 
-  #content-wrapper {
-    position: relative;
-    top: 0;
-    
-  }
+    #content-wrapper {
+        position: relative;
+        top: 0;
+    }
 
-  #wrapper.toggled #navbar-wrapper,
-  #wrapper.toggled #content-wrapper {
-    position: relative;
-    margin-right: 250px;
-  }
+    #wrapper.toggled #navbar-wrapper,
+    #wrapper.toggled #content-wrapper {
+        position: relative;
+        margin-right: 250px;
+    }
 }
-.border-custom{
-  box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.16);
-  border-left: 3px solid #0099cc;
+.border-custom {
+    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.16);
+    border-left: 3px solid #0099cc;
 }
-.sidebaricon i{
-  font-size:1.4em;
+.sidebaricon i {
+    font-size: 1.4em;
 }
-.menuicon{
-  color: #0099cc;
+.menuicon {
+    color: #0099cc;
 }
-.imagelogo{
-  height: 45px;
-	width: 45px;
+.imagelogo {
+    height: 45px;
+    width: 45px;
 }
-::-webkit-scrollbar-track
-{
-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-::-webkit-scrollbar
-{
-	width: 10px;
-	background-color: #F5F5F5;
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
 }
 
-::-webkit-scrollbar-thumb
-{
-	background-color: #0ae;
-	
+::-webkit-scrollbar-thumb {
+    background-color: #0ae;
 }

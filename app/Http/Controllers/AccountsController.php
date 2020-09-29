@@ -36,7 +36,7 @@ class AccountsController extends Controller
         $accounts = User::where('id', 'like', '%' . $search . '%')
                 ->orWhere('name', 'like', '%' . $search . '%')
                 ->orWhere('email', 'like', '%' . $search . '%')
-                ->orWhere('usersrole', 'like', '%' . $search . '%')
+               // ->orWhere('usersrole', 'like', '%' . $search . '%')
                 ->paginate(10);
 
                 return view('Accounts.index', compact(['accounts','systemupdates']))->with('accounts', $accounts);

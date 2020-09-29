@@ -55,9 +55,9 @@
       </li>
 
       <div class="collapse" id="collapseExample">
-        @if(Auth::user()->usersrole == "superadmin")
+<!--         @if(Auth::user()->usersrole == "superadmin")
           <a class="dropdown-item" href="{{ route('systemupdates.index') }} "><i class="fal fa-wrench  pt-3 pr-4"></i>System Update</a>
-        @endif   
+        @endif  -->  
           <a class="dropdown-item" href="{{ route('systeminfos.index') }}"><i class="fal fa-question-circle  pt-3 pr-4"></i>System Info</a>
        
           <a class="dropdown-item" href=" {{ route('activitylogs.index') }}"><i class="fal fa-tasks  pt-3 pr-4"></i>Activity Logs</a>
@@ -68,9 +68,9 @@
       </li>
 
       <div class="collapse" id="collapseExample2">                   
-          <a class="dropdown-item" href=" {{ route('foodhunt.index') }} "><i class="far fa-star pt-3 pr-4"></i>Food Hunt</a>
-          <a class="dropdown-item" href=" {{ route('fooddrop.index') }} "><i class="fal fa-cloud-meatball pt-3 pr-4"></i>Fooddrop</a>
-          <a class="dropdown-item" href=" {{ route('spellafood.index') }} "><i class="fal fa-spell-check pt-3 pr-4"></i>Spellafood</a>
+          <a class="dropdown-item" href=" {{ route('foodhunt.index') }} "><i class="far fa-star pt-3 pr-4"></i>Story mode</a>
+          <a class="dropdown-item" href=" {{ route('fooddrop.index') }} "><i class="fal fa-cloud-meatball pt-3 pr-4"></i>Fooddrop arcade</a>
+          <a class="dropdown-item" href=" {{ route('spellafood.index') }} "><i class="fal fa-spell-check pt-3 pr-4"></i>Spellafood arcade</a>
       </div>
 
     
@@ -101,8 +101,22 @@
       <div class="nav-item col-xs-2">
           <p href="#" class="sidebaricon text-dark  pt-4 pl-3" id="sidebar-toggle"><i class="fa fa-bars"></i></p>
       </div>
-      <div class="nav-item col-xs-10">
-           @yield('nameandlogo')
+      <div class="nav-item pl-5 col-xs-10 align-self-center">
+      @if(count($systemupdates) >0)
+@foreach($systemupdates as $systemupdate)
+    
+    
+    <div class="media m-auto">
+    <img src="{{ asset('/uploads/dataimages/' .  $systemupdate->uploadimage ) }}" class="dost-image img img-fluid pull-left">
+        <div class="media-body m-auto">
+        <a class="navbar-brand text-dark">{{ $systemupdate->systemname }}</a>
+        
+        </div>
+      </div>
+
+@endforeach
+ 
+@endif
       </div>
       
       

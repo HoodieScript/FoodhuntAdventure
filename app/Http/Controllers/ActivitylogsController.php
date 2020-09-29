@@ -22,8 +22,12 @@ class ActivitylogsController extends Controller
         //
         $systemupdates = Systemupdate::all();
         $activitylogs = Activitylog::orderBy('id','desc')->paginate(10);
-
-        return view('Activitylog.index',compact('systemupdates'))->with('activitylogs', $activitylogs);
+        $multipledata = [
+            'systemupdates' => $systemupdates,
+            'activitylogs' => $activitylogs,
+           
+            ];
+        return view('Activitylog.index')->with($multipledata);
     }
 
     public function search(Request $request)
@@ -37,8 +41,12 @@ class ActivitylogsController extends Controller
                 ->orWhere('causer_id', 'like', '%' . $search . '%')
                 ->orWhere('created_at', 'like', '%' . $search . '%')
                 ->paginate(10);
-
-                return view('Activitylog.index', compact(['activitylogs','systemupdates']))->with('activitylogs', $activitylogs);
+                $multipledata = [
+                    'systemupdates' => $systemupdates,
+                    'activitylogs' => $activitylogs,
+                   
+                    ];
+            return view('Activitylog.index')->with($multipledata);
     }
 
     /**

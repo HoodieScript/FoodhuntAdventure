@@ -20,6 +20,7 @@ class CreateStageprogressesTable extends Migration
             $table->integer('back');
             $table->integer('gro');
             $table->integer('mar');
+            $table->integer('total_stars');
             $table->string('date');
             $table->timestamps();
         });

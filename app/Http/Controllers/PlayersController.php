@@ -23,8 +23,12 @@ class PlayersController extends Controller
     {
         $systemupdates = Systemupdate::all();
         $players = Player::orderBy('id','desc')->paginate(10);
-        return view('Player.index', compact('systemupdates'))
-        ->with('players', $players);
+        $multipledata = [
+            'systemupdates' => $systemupdates,
+            'players' => $players,
+           
+            ];
+        return view('Player.index')->with($multipledata);
     }
 
     public function search(Request $request)
@@ -36,8 +40,12 @@ class PlayersController extends Controller
                 ->orWhere('gender', 'like', '%' . $search . '%')
                 ->orWhere('age', 'like', '%' . $search . '%')
                 ->paginate(10);
-
-              //  return view('Player.index', compact(['players','systemupdates']))->with('players', $players);
+                $multipledata = [
+                    'systemupdates' => $systemupdates,
+                    'players' => $players,
+                   
+                    ];
+        return view('Player.index')->with($multipledata);
     }
     
     /**

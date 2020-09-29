@@ -16,7 +16,7 @@
     <form action="/search-for-accounts-data" method="get">
             @csrf
                 <div class="input-group">
-                    <input type="search" name="search" placeholder="search..." maxlength="30" class="form-control">
+                    <input type="search" name="search" placeholder="search name, email" maxlength="30" class="form-control">
                     <span class="input-group-prepend">
                         <button type="submit" class="btn btn-sm btn-info rounded"><i class="fas fa-search"></i></button>
                     </span>
@@ -162,13 +162,4 @@
   </div>
 
 
-@endsection
-@section('nameandlogo')
-@foreach($systemupdates as $systemdata)
-
-
-<a class=" nav-link text-dark font-weight-bold"><img src="{{ asset('/uploads/dataimages/' .  $systemdata->uploadimage ) }}" class="img imagelogo">{{ $systemdata->systemname }} </a>
-
-
-@endforeach
 @endsection

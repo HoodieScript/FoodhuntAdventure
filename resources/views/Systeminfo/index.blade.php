@@ -1,55 +1,31 @@
 @extends('layouts.default')
-
-@section('nameandapp')
-
-@if(count($systemupdates) >0)
-    @foreach($systemupdates as $systemupdate)
-    
-    <img src="/storage/images_uploads/{{ $systemupdate->cover_image }}" class="dost-image">
-    
-    <a class="navbar-brand text-white">{{ $systemupdate->systemname }}</a>
-   
-
-    @endforeach
- 
-@endif
-
-@overwrite
 @section('contentmo')
+<div class="w-75 bg-white container rounded p-3  mt-5">
+   <div class="row d-flex justify-content-between">
+   <div class=" col-md-6">
+     <h2>{{ __('Activity Log') }}</h2>
+   </div>
+   <div class="col-md-2 align-self-center">
+         @if(Auth::user()->usersrole == "superadmin")
 
-<div class="container">
-@if($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $message }}</p>
-    </div>
-
-@endif
-    <div class="row">
-        <div class="col-md-6 p-2">
-            <h3 class="text-white">System Information</h3>
+            <button class="btn btn-md btn-primary float-right" data-toggle="modal" data-target="#add-data-modal">
+            ADD INFORMATION <i class="fal fa-layer-plus pl-3"></i>
+            </button>
+        @endif
          </div>
-         <div class="col-md-4 p-2">
-            <form action="/search-for-systemInfo-data" method="get">
+ 
+   <div class=" col-md-4 align-self-center">
+   <form action="/search-for-systemInfo-data" method="get">
                 <div class="input-group">
-                    <input type="search" name="search" placeholder="looking for something?" class="form-control">
+                    <input type="search" name="search" placeholder="search title" class="form-control">
                     <span class="input-group-prepend">
                         <button type="submit" class="btn btn-sm btn-info rounded">Search</button>
                     </span>
                 </div>
             </form>
-         </div>     
-         <div class="col-md-2 p-3">
-         @if(Auth::user()->usersrole == "superadmin")
-
-            <button class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#add-data-modal">
-            ADD INFORMATION <i class="fal fa-layer-plus pl-3"></i>
-            </button>
-        @endif
-         </div>
-    </div>
-
-
-    <div class="row"> 
+   </div>
+  
+   <div class="row mt-5"> 
 @foreach( $systeminfos as $systeminfo)
     <div class="card col-lg-12 p-0  rounded mb-2">
   
@@ -80,9 +56,15 @@
 @endforeach
 {{ $systeminfos->links() }}
     </div>
+   </div>
 
-<div>
 
+
+
+<!-- 
+    
+
+-->
 
   <!--/////////////////////////////////////////////---------A D D---------/////////////////////////////////////////////-->
   <div class="modal fade modal-create" id="add-data-modal" role="dialog">
@@ -130,7 +112,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary"   id="button" ><a  class="text-white">Create</a></button>
+          <button type="submit" class="btn btn-sm btn-info rounded"><i class="fas fa-search"></i></button>
         </div>
       </div>
       

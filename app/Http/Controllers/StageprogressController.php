@@ -24,7 +24,12 @@ class StageprogressController extends Controller
 
         $systemupdates = Systemupdate::all();
         $foodhunt = Stageprogress::orderBy('id','created_at')->paginate(10);
-        return view('Stagelevel.index',compact('systemupdates'))->with('foodhunt', $foodhunt);
+
+        $multipledata = [
+            'systemupdates' => $systemupdates,
+             'foodhunt' => $foodhunt
+        ];
+        return view('Stagelevel.index')->with($multipledata);
 
     }
 
@@ -40,7 +45,11 @@ class StageprogressController extends Controller
                 ->orWhere('mar', 'like', '%' . $search . '%')
                 ->paginate(10);
 
-                return view('Stagelevel.index', compact('systemupdates'))->with('foodhunt', $foodhunt);
+                $multipledata = [
+                    'systemupdates' => $systemupdates,
+                     'foodhunt' => $foodhunt
+                ];
+                return view('Stagelevel.index')->with($multipledata);
     }
 
     /**
